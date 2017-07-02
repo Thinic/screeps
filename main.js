@@ -10,6 +10,7 @@ var tasks = [
 module.exports = 
 {
     loop: function() {
+		console.log('test'); 
         tasks.forEach(function(task) {
             try { task.run(); } catch (error) {
                 console.log('Error with task ' + task.name + ': ' + error + ' \n' + error.stack); 
