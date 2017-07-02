@@ -1,19 +1,8 @@
-var tasks = [
-    require('task.pre'), 
-    require('task.gc'), 
-    require('task.tower'), 
-    require('task.spawn'), 
-    require('task.creep'), 
-    require('task.post')
-]; 
+'use strict'; 
 
-module.exports = 
-{
-    loop: function() {
-        tasks.forEach(function(task) {
-            try { task.run(); } catch (error) {
-                console.log('Error with task ' + task.name + ': ' + error + ' \n' + error.stack); 
-            } 
-        }); 
-    }
+require('roomutil'); 
+require('hive'); 
+
+module.exports.loop = function() {
+    hive.update(); 
 }
